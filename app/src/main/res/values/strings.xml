@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">masas</string>
+    <string name="action_settings">Settings</string>
+    <string name="valor_entrada">Isotopos de entrada</string>
+    <string name="valor_salida">Isotopos de salida</string>
+    <string name="simbolo_entrada">Simbolo</string>
+    <string name="numero_entrada">Numero Masico</string>
+    <string name="simbolo_salida">Simbolo</string>
+    <string name="numero_salida">Numero Masico</string>
+    <string name="show_entrada">Isotopos Entrada</string>
+    <string name="show_salida">Isotopos Salida</string>
+    <string name="resultado">Presiona calcular</string>
+    <string name="Etiqueta_resultado">Resultado</string>
+    <string name="calcular">Calcular</string>
+
+    <string name="button_add">Añadir Entrada</string>
+    <string name="reset_in">Reset</string>
+
+
+</resources>
