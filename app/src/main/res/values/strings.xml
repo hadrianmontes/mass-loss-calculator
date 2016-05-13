@@ -7,7 +7,7 @@
     <string name="numero_entrada">Numero Masico</string>
     <string name="simbolo_salida">Simbolo</string>
     <string name="numero_salida">Numero Masico</string>
-    <string name="show_entrada">Isotopos Entrada</string>
+    <string name="show_entrada">Press Calculate</string>
     <string name="show_salida">Isotopos Salida</string>
     <string name="resultado">Presiona calcular</string>
     <string name="Etiqueta_resultado">Resultado</string>
