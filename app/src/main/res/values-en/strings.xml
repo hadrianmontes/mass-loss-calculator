@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">masas</string>
+    <string name="app_name">Q Calculator</string>
     <string name="Etiqueta_resultado">Result (Q)</string>
     <string name="button_add">Add In</string>
     <string name="calcular">Calculate</string>
