@@ -12,6 +12,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -21,14 +22,38 @@ public class Myactivity extends AppCompatActivity {
     double masa_inicial=0.;
     double masa_final=0.;
     double conversion=931.494;
+    String write_input="";
+    String write_output="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my);
+        if (savedInstanceState != null) {
+            // Restore value of members from saved state
+            masa_inicial = savedInstanceState.getDouble("masa_inicial");
+            masa_final = savedInstanceState.getDouble("masa_final");
+            write_input = savedInstanceState.getString("write_input");
+            write_output = savedInstanceState.getString("write_output");
+            TextView salida = (TextView) findViewById(R.id.show_entrada);
+            salida.setText(write_input);
+            TextView salida2 = (TextView) findViewById(R.id.show_salida);
+            salida2.setText(write_output);
+
+        }
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         InputStream is = getResources().openRawResource(R.raw.mass);
         lista.import_isotopes(is);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState){
+        savedInstanceState.putDouble("masa_inicial",masa_inicial);
+        savedInstanceState.putDouble("masa_final",masa_final);
+        savedInstanceState.putString("write_input",write_input);
+        savedInstanceState.putString("write_output",write_output);
+
+        super.onSaveInstanceState(savedInstanceState);
     }
 
     @Override
@@ -66,7 +91,8 @@ public class Myactivity extends AppCompatActivity {
             TextView salida = (TextView) findViewById(R.id.show_entrada);
             if ((masa=lista.get_mass(entrada,Integer.parseInt(numero)))!=0){
                 masa_inicial+=masa;
-                salida.setText(salida.getText().toString() + entrada + "-" + Integer.parseInt(numero) + " ");
+                write_input+=entrada + "-" + Integer.parseInt(numero) + " ";
+                salida.setText(write_input);
             }
             else {
                 entrada = "Invalid ISotope";
@@ -77,7 +103,8 @@ public class Myactivity extends AppCompatActivity {
     public void reset_in (View view){
         TextView salida = (TextView) findViewById(R.id.show_entrada);
         masa_inicial=0;
-        salida.setText("");
+        write_input="";
+        salida.setText(write_input);
     }
     public void add_salida(View view) {
         EditText editText = (EditText) findViewById(R.id.simbolo_salida);
@@ -93,7 +120,8 @@ public class Myactivity extends AppCompatActivity {
             TextView salida = (TextView) findViewById(R.id.show_salida);
             if ((masa=lista.get_mass(entrada,Integer.parseInt(numero)))!=0){
                 masa_final+=masa;
-                salida.setText(salida.getText().toString() + entrada + "-" + Integer.parseInt(numero) + " ");
+                write_output+=entrada + "-" + Integer.parseInt(numero) + " ";
+                salida.setText(write_output);
             }
             else {
                 entrada = "Invalid ISotope";
@@ -105,7 +133,8 @@ public class Myactivity extends AppCompatActivity {
     public void reset_out (View view){
         masa_final=0;
         TextView salida = (TextView) findViewById(R.id.show_salida);
-        salida.setText("");
+        write_output="";
+        salida.setText(write_output);
     }
 
     public void calcular(View view){
