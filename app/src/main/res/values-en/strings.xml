@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Q Calculator</string>
     <string name="Etiqueta_resultado">Result (Q)</string>
-    <string name="button_add">Add In</string>
+    <string name="button_add">Add Isotope</string>
     <string name="calcular">Calculate</string>
     <string name="numero_entrada">Mass Number</string>
     <string name="numero_salida">Mass Number</string>

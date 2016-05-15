@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Q Calculator</string>
     <string name="Etiqueta_resultado">Resultado (Q)</string>
-    <string name="button_add">Añadir Entrada</string>
+    <string name="button_add">Añadir Isótopo</string>
     <string name="calcular">Calcular</string>
     <string name="numero_entrada">Número Másico</string>
     <string name="numero_salida">Número Másico</string>
